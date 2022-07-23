@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>SERGO.Bedrockio.ExportHtmlClient</AssemblyName>
+        <RootNamespace>SERGO.Bedrockio.ExportHtmlClient</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj" />
+    </ItemGroup>
+
+</Project>
