@@ -1,3 +1,4 @@
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using SERGO.Bedrockio.ExportHtmlClient.DependencyInjection;
 using SERGO.Bedrockio.HtmlExportClient.Core.Contracts;
@@ -7,34 +8,34 @@ namespace SERGO.Bedrockio.ExportHtmlClient.Tests.Core;
 
 public class HtmlExportRepositoryTests
 {
-    [Fact]
-    public void ShouldCorrectlyConvertFromHtmlToPdf()
+    private IServiceProvider _provider;
+    
+    public HtmlExportRepositoryTests()
     {
         var services = new ServiceCollection();
 
-        services.AddExportHtmlClient(configure =>
-        {
-            configure.BaseUrl = "";
-            configure.TimeOut = 10000;
-        });
-        var provider = services.BuildServiceProvider();
+        var configuration = new ConfigurationBuilder()
+            .AddEnvironmentVariables()
+            .Build();
 
-        var client = provider.GetRequiredService<IHtmlExportRepository>();
+        var section = configuration.GetSection("exporthtml");
+        
+        services.AddExportHtmlClient(section);
+
+        _provider = services.BuildServiceProvider();
+    }
+    
+    [Fact]
+    public void ShouldCorrectlyConvertFromHtmlToPdf()
+    {
+        var client = _provider.GetRequiredService<IHtmlExportRepository>();
         client.ToPdfFromHtml("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
     }
     
     [Fact]
     public void ShouldCorrectlyConvertFromHtmlToScreenshot()
     {
-        var services = new ServiceCollection();
-        services.AddExportHtmlClient(configure =>
-        {
-            configure.BaseUrl = "";
-            configure.TimeOut = 10000;
-        });
-        var provider = services.BuildServiceProvider();
-
-        var client = provider.GetRequiredService<IHtmlExportRepository>();
+        var client = _provider.GetRequiredService<IHtmlExportRepository>();
         client.ToScreenshotFromHtml("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
     }
     
