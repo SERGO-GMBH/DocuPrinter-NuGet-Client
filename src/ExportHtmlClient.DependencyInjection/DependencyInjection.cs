@@ -8,9 +8,9 @@ namespace SERGO.Bedrockio.ExportHtmlClient.DependencyInjection;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddExportHtmlClient(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddExportHtmlClient(this IServiceCollection services, IConfigurationSection section)
     {
-        var config = configuration.GetSection(nameof(ExportHtmlClientOptions)).Get<ExportHtmlClientOptions>();
+        var config = section.Get<ExportHtmlClientOptions>();
 
         services.AddHttpClient<IHtmlExportRepository, HtmlExportRepository>(client =>
         {

@@ -11,6 +11,7 @@ public class HtmlExportRepositoryTests
     public void ShouldCorrectlyConvertFromHtmlToPdf()
     {
         var services = new ServiceCollection();
+
         services.AddExportHtmlClient(configure =>
         {
             configure.BaseUrl = "";
