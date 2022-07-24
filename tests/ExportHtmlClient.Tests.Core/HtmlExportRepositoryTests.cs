@@ -3,7 +3,7 @@ using SERGO.Bedrockio.ExportHtmlClient.DependencyInjection;
 using SERGO.Bedrockio.HtmlExportClient.Core.Contracts;
 using Xunit;
 
-namespace ExportHtmlClient.Tests.Core;
+namespace SERGO.Bedrockio.ExportHtmlClient.Tests.Core;
 
 public class HtmlExportRepositoryTests
 {

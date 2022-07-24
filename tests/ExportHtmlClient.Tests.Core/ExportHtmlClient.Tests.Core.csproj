@@ -4,6 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <AssemblyName>SERGO.Bedrockio.ExportHtmlClient.Tests.Core</AssemblyName>
+        <RootNamespace>SERGO.Bedrockio.ExportHtmlClient.Tests.Core</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -13,9 +15,8 @@
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj" />
-      <ProjectReference Include="..\ExportHtmlClient.DependencyInjection\ExportHtmlClient.DependencyInjection.csproj" />
-      <ProjectReference Include="..\ExportHtmlClient\ExportHtmlClient.csproj" />
+      <ProjectReference Include="..\..\src\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj" />
+      <ProjectReference Include="..\..\src\ExportHtmlClient.DependencyInjection\ExportHtmlClient.DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>
