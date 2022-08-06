@@ -30,7 +30,7 @@ jobs:
       run: dotnet pack -p:Version=${PACK_VERSION#v} -o /published --no-restore --no-build
       
     - name: Push
-      run: dotnet nuget push published/*.nupkg --api-key $NUGET_TOKEN
+      run: dotnet nuget push published/*.nupkg --api-key ${{secrets.NUGET_TOKEN}}
     
     - name: Create Release
       id: create_release
