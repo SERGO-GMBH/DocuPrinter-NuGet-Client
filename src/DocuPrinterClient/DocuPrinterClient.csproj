@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <AssemblyName>SERGO.DocuPrinter.Client</AssemblyName>
+        <RootNamespace>SERGO.DocuPrinter.Client</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\DocuPrinterClient.Core\DocuPrinterClient.Core.csproj" />
+    </ItemGroup>
+
+</Project>
