@@ -6,10 +6,12 @@
         <Nullable>enable</Nullable>
         <AssemblyName>SERGO.DocuPrinter.Client</AssemblyName>
         <RootNamespace>SERGO.DocuPrinter.Client</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
       <ProjectReference Include="..\DocuPrinterClient.Core\DocuPrinterClient.Core.csproj" />
+      <ProjectReference Include="..\DocuPrinterClient.DependencyInjection\DocuPrinterClient.DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>
