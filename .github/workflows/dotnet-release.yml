@@ -1,0 +1,46 @@
+name: .NET
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+    
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Restore dependencies
+      run: dotnet restore
+      
+    - name: Build
+      run: dotnet build --no-restore
+    
+    - name: Pack
+      env:
+        PACK_VERSION: ${{ github.ref_name }}
+      run: dotnet pack -p:Version=${PACK_VERSION#v} -o /published -no-restore --no-build
+      
+    - name: Push
+      run: dotnet nuget push published/*.nupkg --api-key $NUGET_TOKEN
+    
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ github.ref }}
+        release_name: Release ${{ github.ref_name }}
+        body: |
+          Please check [README](https://github.com/SERGO-GMBH/DocuPrinter-NuGet-Client) to see how you can use this project.
+        draft: false
+        prerelease: false
