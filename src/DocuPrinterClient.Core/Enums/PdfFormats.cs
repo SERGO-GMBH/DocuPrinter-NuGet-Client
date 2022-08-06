@@ -1,4 +1,4 @@
-namespace SERGO.Bedrockio.HtmlExportClient.Core.Enums;
+namespace SERGO.DocuPrinter.Client.Core.Enums;
 
 public enum PdfFormats
 {

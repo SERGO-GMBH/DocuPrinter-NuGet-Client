@@ -1,7 +1,6 @@
-using System.Text.Json.Serialization;
 using Newtonsoft.Json;
 
-namespace SERGO.Bedrockio.HtmlExportClient.Core.Models;
+namespace SERGO.DocuPrinter.Client.Core.Models;
 
 [Serializable]
 public class PdfPayload

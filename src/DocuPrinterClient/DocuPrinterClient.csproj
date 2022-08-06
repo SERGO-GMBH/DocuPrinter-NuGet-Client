@@ -4,12 +4,12 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>SERGO.Bedrockio.HtmlExportClient.Core</AssemblyName>
-        <RootNamespace>SERGO.Bedrockio.HtmlExportClient.Core</RootNamespace>
+        <AssemblyName>SERGO.DocuPrinter.Client</AssemblyName>
+        <RootNamespace>SERGO.DocuPrinter.Client</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+      <ProjectReference Include="..\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj" />
     </ItemGroup>
 
 </Project>

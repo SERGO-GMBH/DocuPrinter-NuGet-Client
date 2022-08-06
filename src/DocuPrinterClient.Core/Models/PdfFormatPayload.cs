@@ -1,6 +1,6 @@
 using Newtonsoft.Json;
 
-namespace SERGO.Bedrockio.HtmlExportClient.Core.Models;
+namespace SERGO.DocuPrinter.Client.Core.Models;
 
 [Serializable]
 public class PdfFormatPayload

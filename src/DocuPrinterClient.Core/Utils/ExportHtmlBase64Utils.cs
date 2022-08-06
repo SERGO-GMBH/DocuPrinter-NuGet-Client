@@ -1,4 +1,4 @@
-namespace SERGO.Bedrockio.HtmlExportClient.Core.Utils;
+namespace SERGO.DocuPrinter.Client.Core.Utils;
 
 public class ExportHtmlBase64Utils
 {

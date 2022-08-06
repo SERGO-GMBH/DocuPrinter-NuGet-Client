@@ -1,10 +1,10 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SERGO.Bedrockio.ExportHtmlClient.DependencyInjection;
-using SERGO.Bedrockio.HtmlExportClient.Core.Contracts;
+using SERGO.DocuPrinter.Client.Core.Contracts;
+using SERGO.DocuPrinter.Client.DependencyInjection;
 using Xunit;
 
-namespace SERGO.Bedrockio.ExportHtmlClient.Tests.Core;
+namespace SERGO.DocuPrinter.Client.Tests.Core;
 
 public class HtmlExportRepositoryTests
 {
@@ -18,7 +18,7 @@ public class HtmlExportRepositoryTests
             .AddEnvironmentVariables()
             .Build();
 
-        var section = configuration.GetSection("exporthtml");
+        var section = configuration.GetSection("DocuPrinter");
         
         services.AddExportHtmlClient(section);
 
@@ -38,5 +38,4 @@ public class HtmlExportRepositoryTests
         var client = _provider.GetRequiredService<IHtmlExportRepository>();
         client.ToScreenshotFromHtml("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
     }
-    
 }

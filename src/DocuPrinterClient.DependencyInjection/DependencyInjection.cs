@@ -1,10 +1,10 @@
-using ExportHtmlClient.Core.Models;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using SERGO.Bedrockio.HtmlExportClient.Core.Contracts;
-using SERGO.Bedrockio.HtmlExportClient.Core.Repository;
+using SERGO.DocuPrinter.Client.Core.Contracts;
+using SERGO.DocuPrinter.Client.Core.Models;
+using SERGO.DocuPrinter.Client.Core.Repository;
 
-namespace SERGO.Bedrockio.ExportHtmlClient.DependencyInjection;
+namespace SERGO.DocuPrinter.Client.DependencyInjection;
 
 public static class DependencyInjection
 {

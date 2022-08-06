@@ -1,8 +1,8 @@
-using SERGO.Bedrockio.HtmlExportClient.Core.Enums;
+using SERGO.DocuPrinter.Client.Core.Enums;
 
-namespace SERGO.Bedrockio.HtmlExportClient.Core.Contracts;
+namespace SERGO.DocuPrinter.Client.Core.Contracts;
 
-public interface IHtmlExportRepository
+public interface IDocuPrinterRepository
 {
     Task<Stream> ToPdfFromHtml(
         string html, 

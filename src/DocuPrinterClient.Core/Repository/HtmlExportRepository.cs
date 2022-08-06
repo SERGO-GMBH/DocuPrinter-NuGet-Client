@@ -1,13 +1,13 @@
 using System.Text;
 using Newtonsoft.Json;
-using SERGO.Bedrockio.HtmlExportClient.Core.Constants;
-using SERGO.Bedrockio.HtmlExportClient.Core.Contracts;
-using SERGO.Bedrockio.HtmlExportClient.Core.Enums;
-using SERGO.Bedrockio.HtmlExportClient.Core.Exceptions;
-using SERGO.Bedrockio.HtmlExportClient.Core.Models;
-using SERGO.Bedrockio.HtmlExportClient.Core.Utils;
+using SERGO.DocuPrinter.Client.Core.Constants;
+using SERGO.DocuPrinter.Client.Core.Contracts;
+using SERGO.DocuPrinter.Client.Core.Enums;
+using SERGO.DocuPrinter.Client.Core.Exceptions;
+using SERGO.DocuPrinter.Client.Core.Models;
+using SERGO.DocuPrinter.Client.Core.Utils;
 
-namespace SERGO.Bedrockio.HtmlExportClient.Core.Repository;
+namespace SERGO.DocuPrinter.Client.Core.Repository;
 
 public class HtmlExportRepository : IHtmlExportRepository
 {

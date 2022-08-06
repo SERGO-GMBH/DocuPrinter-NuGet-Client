@@ -4,8 +4,8 @@
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
-        <AssemblyName>SERGO.Bedrockio.ExportHtmlClient.Tests.Core</AssemblyName>
-        <RootNamespace>SERGO.Bedrockio.ExportHtmlClient.Tests.Core</RootNamespace>
+        <AssemblyName>SERGO.DocuPrinter.Client.Tests.Core</AssemblyName>
+        <RootNamespace>SERGO.DocuPrinter.Client.Tests.Core</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>
@@ -14,11 +14,12 @@
       <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="6.0.0" />
       <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.2.0" />
       <PackageReference Include="xunit" Version="2.4.1" />
+      <PackageReference Include="xunit.runner.visualstudio" Version="2.4.5" />
     </ItemGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\..\src\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj" />
-      <ProjectReference Include="..\..\src\ExportHtmlClient.DependencyInjection\ExportHtmlClient.DependencyInjection.csproj" />
+      <ProjectReference Include="..\..\src\DocuPrinterClient.Core\DocuPrinterClient.Core.csproj" />
+      <ProjectReference Include="..\..\src\DocuPrinterClient.DependencyInjection\DocuPrinterClient.DependencyInjection.csproj" />
     </ItemGroup>
 
 </Project>

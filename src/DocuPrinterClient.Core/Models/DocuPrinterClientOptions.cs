@@ -1,9 +1,8 @@
-namespace ExportHtmlClient.Core.Models;
+namespace SERGO.DocuPrinter.Client.Core.Models;
 
 [Serializable]
-public class ExportHtmlClientOptions
+public class DocuPrinterClientOptions
 {
     public string? BaseUrl { get; set; }
     public int TimeOut { get; set; }
-
 }
