@@ -1,13 +1,13 @@
-# export-html-nuget
+# docuprinter-nuget
 
-This library is a client to use the ExportHtml Service that converts a html file to pdf or a png screenshot.
+This library is a client to use the DocuPrinter Service that converts a html file to pdf or a png screenshot.
 
 ## Installation
 
 you can install it by adding the following code in your startup.cs:
 
 
-    services.AddExportHtmlClient(configure =>
+    services.AddDocuPrinterClient(configure =>
     {
         configure.BaseUrl = "";
         configure.TimeOut = 10000;
@@ -15,16 +15,16 @@ you can install it by adding the following code in your startup.cs:
 
 or it is possible to add a configuration section:
 
-    var section = configuration.GetSection("Your section");
-    services.AddExportHtmlClient(section);
+    var section = configuration.GetSection("DocuPrinter");
+    services.AddDocuPrinterClient(section);
 
 ## Examples
 
 Usage by constructor injection:
 
-    private IHtmlExportRepository _exportRepository;
+    private IDocuPrinterRepository _exportRepository;
     
-    public TestService(IHtmlExportRepository exportRepository)
+    public TestService(IDocuPrinterRepository exportRepository)
     {
         _exportRepository = exportRepository;
     }

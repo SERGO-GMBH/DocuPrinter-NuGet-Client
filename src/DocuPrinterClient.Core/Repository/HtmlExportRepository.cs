@@ -9,16 +9,16 @@ using SERGO.DocuPrinter.Client.Core.Utils;
 
 namespace SERGO.DocuPrinter.Client.Core.Repository;
 
-public class HtmlExportRepository : IHtmlExportRepository
+public class DocuPrinterRepository : IDocuPrinterRepository
 {
     private readonly HttpClient _httpClient;
 
-    public HtmlExportRepository(HttpClient httpClient)
+    public DocuPrinterRepository(HttpClient httpClient)
     {
         _httpClient = httpClient;
     }
 
-    public async Task<Stream> ToPdfFromHtml(string html,
+    public async Task<Stream> ToPdfFromHtmlAsync(string html,
         bool convertToBase64 = false,
         PdfFormats formats = PdfFormats.Letter)
     {
@@ -36,11 +36,11 @@ public class HtmlExportRepository : IHtmlExportRepository
         
         var json = JsonConvert.SerializeObject(payload);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await _httpClient.PostAsync(ExportHtmlEndpointConstants.Pdf, data);
+        var response = await _httpClient.PostAsync(DocuPrinterEndpointConstants.Pdf, data);
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new ExportHtmlClientException(
+            throw new DocuPrinterClientException(
                 await response.Content.ReadAsStringAsync()
             );
         }
@@ -49,7 +49,7 @@ public class HtmlExportRepository : IHtmlExportRepository
         return await responseContent.ReadAsStreamAsync();
     }
 
-    public async Task<Stream> ToScreenshotFromHtml(string html, bool convertToBase64 = false, PdfFormats formats = PdfFormats.Letter)
+    public async Task<Stream> ToScreenshotFromHtmlAsync(string html, bool convertToBase64 = false, PdfFormats formats = PdfFormats.Letter)
     {
         var content = ConvertToBase64(html, convertToBase64);
         
@@ -60,11 +60,11 @@ public class HtmlExportRepository : IHtmlExportRepository
         
         var json = JsonConvert.SerializeObject(payload);
         var data = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await _httpClient.PostAsync(ExportHtmlEndpointConstants.Screenshot, data);
+        var response = await _httpClient.PostAsync(DocuPrinterEndpointConstants.Screenshot, data);
 
         if (!response.IsSuccessStatusCode)
         {
-            throw new ExportHtmlClientException(
+            throw new DocuPrinterClientException(
                 await response.Content.ReadAsStringAsync()
             );
         }
@@ -75,6 +75,6 @@ public class HtmlExportRepository : IHtmlExportRepository
 
     private static string ConvertToBase64(string html, bool convert)
     {
-        return convert ? ExportHtmlBase64Utils.Base64Encode(html) : html;
+        return convert ? DocuPrinterBase64Utils.Base64Encode(html) : html;
     }
 }

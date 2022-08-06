@@ -4,12 +4,12 @@ namespace SERGO.DocuPrinter.Client.Core.Contracts;
 
 public interface IDocuPrinterRepository
 {
-    Task<Stream> ToPdfFromHtml(
+    Task<Stream> ToPdfFromHtmlAsync(
         string html, 
         bool convertToBase64 = false,
         PdfFormats formats = PdfFormats.Letter);
     
-    Task<Stream> ToScreenshotFromHtml(
+    Task<Stream> ToScreenshotFromHtmlAsync(
         string html, 
         bool convertToBase64 = false,
         PdfFormats formats = PdfFormats.Letter);

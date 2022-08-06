@@ -8,11 +8,11 @@ namespace SERGO.DocuPrinter.Client.DependencyInjection;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddExportHtmlClient(this IServiceCollection services, IConfigurationSection section)
+    public static IServiceCollection AddDocuPrinterClient(this IServiceCollection services, IConfigurationSection section)
     {
-        var config = section.Get<ExportHtmlClientOptions>();
+        var config = section.Get<DocuPrinterClientOptions>();
 
-        services.AddHttpClient<IHtmlExportRepository, HtmlExportRepository>(client =>
+        services.AddHttpClient<IDocuPrinterRepository, DocuPrinterRepository>(client =>
         {
             client.BaseAddress = new Uri(config.BaseUrl!);
             client.Timeout = TimeSpan.FromSeconds(config.TimeOut);
@@ -21,12 +21,12 @@ public static class DependencyInjection
         return services;
     }
     
-    public static IServiceCollection AddExportHtmlClient(this IServiceCollection services, Action<ExportHtmlClientOptions> builder)
+    public static IServiceCollection AddDocuPrinterClient(this IServiceCollection services, Action<DocuPrinterClientOptions> builder)
     {
-        var config = new ExportHtmlClientOptions();
+        var config = new DocuPrinterClientOptions();
         builder(config);        
 
-        services.AddHttpClient<IHtmlExportRepository, HtmlExportRepository>(client =>
+        services.AddHttpClient<IDocuPrinterRepository, DocuPrinterRepository>(client =>
         {
             client.BaseAddress = new Uri(config.BaseUrl!);
             client.Timeout = TimeSpan.FromSeconds(config.TimeOut);

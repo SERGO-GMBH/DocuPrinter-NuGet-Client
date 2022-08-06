@@ -4,13 +4,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{341344F4-54E
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{AC04BDA9-9937-4231-BF1A-A50EE685C992}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportHtmlClient", "src\ExportHtmlClient\ExportHtmlClient.csproj", "{047E870F-0A01-40F2-82FD-063C2D409EEE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuPrinterClient", "src\DocuPrinterClient\DocuPrinterClient.csproj", "{047E870F-0A01-40F2-82FD-063C2D409EEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportHtmlClient.Core", "src\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj", "{1C9F9BD0-94A3-414F-9FD0-B82338924EF4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuPrinterClient.Core", "src\DocuPrinterClient.Core\DocuPrinterClient.Core.csproj", "{1C9F9BD0-94A3-414F-9FD0-B82338924EF4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportHtmlClient.DependencyInjection", "src\ExportHtmlClient.DependencyInjection\ExportHtmlClient.DependencyInjection.csproj", "{2D6B7127-47CF-474B-8C5B-F85E58F155A9}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuPrinterClient.DependencyInjection", "src\DocuPrinterClient.DependencyInjection\DocuPrinterClient.DependencyInjection.csproj", "{2D6B7127-47CF-474B-8C5B-F85E58F155A9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExportHtmlClient.Tests.Core", "tests\ExportHtmlClient.Tests.Core\ExportHtmlClient.Tests.Core.csproj", "{66CFF764-DD29-41CB-8EC1-1D18747B27B2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DocuPrinterClient.Tests.Core", "tests\DocuPrinterClient.Tests.Core\DocuPrinterClient.Tests.Core.csproj", "{66CFF764-DD29-41CB-8EC1-1D18747B27B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

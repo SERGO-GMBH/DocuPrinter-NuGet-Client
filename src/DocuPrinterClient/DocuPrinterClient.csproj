@@ -9,7 +9,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <ProjectReference Include="..\ExportHtmlClient.Core\ExportHtmlClient.Core.csproj" />
+      <ProjectReference Include="..\DocuPrinterClient.Core\DocuPrinterClient.Core.csproj" />
     </ItemGroup>
 
 </Project>

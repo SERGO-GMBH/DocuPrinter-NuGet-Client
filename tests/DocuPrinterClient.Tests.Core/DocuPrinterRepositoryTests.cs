@@ -6,11 +6,11 @@ using Xunit;
 
 namespace SERGO.DocuPrinter.Client.Tests.Core;
 
-public class HtmlExportRepositoryTests
+public class DocuPrinterRepositoryTests
 {
-    private IServiceProvider _provider;
+    private readonly IServiceProvider _provider;
     
-    public HtmlExportRepositoryTests()
+    public DocuPrinterRepositoryTests()
     {
         var services = new ServiceCollection();
 
@@ -20,7 +20,7 @@ public class HtmlExportRepositoryTests
 
         var section = configuration.GetSection("DocuPrinter");
         
-        services.AddExportHtmlClient(section);
+        services.AddDocuPrinterClient(section);
 
         _provider = services.BuildServiceProvider();
     }
@@ -28,14 +28,14 @@ public class HtmlExportRepositoryTests
     [Fact]
     public void ShouldCorrectlyConvertFromHtmlToPdf()
     {
-        var client = _provider.GetRequiredService<IHtmlExportRepository>();
-        client.ToPdfFromHtml("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
+        var client = _provider.GetRequiredService<IDocuPrinterRepository>();
+        client.ToPdfFromHtmlAsync("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
     }
     
     [Fact]
     public void ShouldCorrectlyConvertFromHtmlToScreenshot()
     {
-        var client = _provider.GetRequiredService<IHtmlExportRepository>();
-        client.ToScreenshotFromHtml("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
+        var client = _provider.GetRequiredService<IDocuPrinterRepository>();
+        client.ToScreenshotFromHtmlAsync("<p>Hallo ich bin ein Text und möchte getestet werden </p>").Wait();
     }
 }
