@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <AssemblyName>SERGO.DocuPrinter.Client.Core</AssemblyName>
         <RootNamespace>SERGO.DocuPrinter.Client.Core</RootNamespace>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
